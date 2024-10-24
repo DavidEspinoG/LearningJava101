@@ -1,6 +1,8 @@
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 class VideoGame {
     private String name;
@@ -61,7 +63,10 @@ public class CollectionExercise {
         System.out.println(anyMultiplayer);
         System.out.println("All the games are for one player: " + allOnePlayer);
         System.out.println("We don't have GTA: " + GTA);
-
+        Comparator<VideoGame> sortByName = Comparator.comparing(VideoGame::getName).reversed();
+        videoGames.stream()
+                .sorted(sortByName)
+                .forEach(System.out::println);
     }
 
 
