@@ -18,7 +18,7 @@ public class ReadingFiles {
             myReader.close();
         } catch(FileNotFoundException e) {
             System.out.println("File not found");
-            System.out.println(e.getLocalizedMessage());
+            System.out.println(e.getMessage());
         }
     }
 }
